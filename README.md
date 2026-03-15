@@ -1,11 +1,8 @@
 # PDFbox 📄
 
 <p align="center">
-  <img src="pdfbox_banner.png" alt="PDFbox Banner" width="100%">
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained">
+
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
   <img src="https://img.shields.io/badge/Android-API%2024%2B-blue.svg?logo=android" alt="Android API">
   <img src="https://img.shields.io/badge/Kotlin-91.0-purple.svg?logo=kotlin" alt="Kotlin">
@@ -18,14 +15,16 @@
 
 ## ✨ Key Features
 
-- ⛓️ **Merge PDFs:** Effortlessly combine multiple PDF files into a single document.
-- ✂️ **Split PDFs:** Extract specific pages or split a large PDF into smaller parts.
-- 🗜️ **Compress PDFs:** Reduce file size without compromising quality for easy sharing.
-- 🔄 **Rotate Pages:** Fix orientation issues by rotating individual or all pages.
-- 🔒 **Secure with Lock:** Protect your sensitive documents with password encryption.
-- 🖼️ **Extract Images:** High-quality image extraction from any PDF document.
-- 📁 **Recent Files:** Quick access to your recently edited documents via a smart localized database.
-- 🔍 **Global Search:** Find any document in seconds with our optimized search engine.
+- ⛓️ **Merge PDFs:** Effortlessly combine multiple PDF files into a single document with drag-and-drop reordering.
+- ✂️ **Split PDFs:** Extract specific pages or split a large PDF into custom ranges (e.g., 1-3, 5-8).
+- 🗜️ **Compress PDFs:** Reduce file size with adjustable optimization levels (Low, Medium, High).
+- 🔄 **Rotate Pages:** Fix orientation issues by rotating individual pages or the entire document.
+- 🔒 **Secure & Unlock:** Protect sensitive docs with 128-bit encryption or remove passwords from protected files.
+- 🖼️ **PDF to Image:** High-quality conversion of PDF pages to **PNG** or **JPG** formats.
+- 📄 **Text Extraction:** Instantly extract and copy selectable text content from any PDF.
+- 📁 **Recent Files:** Quick access to your recently edited documents via a smart Room database.
+- 🔍 **Global Search:** Find any document by name instantly with our optimized search bar.
+- 🌓 **Dark Mode:** Full support for system-wide light and dark themes for a premium experience.
 
 ---
 
@@ -34,13 +33,13 @@
 PDFbox is built using modern Android development best practices and high-performance libraries:
 
 - **Language:** Kotlin & Java (Multi-paradigm approach)
-- **UI Framework:** Jetpack Compose & XML (Hybrid for performance and flexibility)
-- **Design System:** Material Design 3 (Clean, Flat, and Modern UI)
+- **UI Framework:** XML with View Binding (High-performance Material 3 layouts)
+- **Design System:** Material Design 3 (Clean, Flat, and Modern B&W aesthetic)
 - **PDF Engine:** 
-  - [PDFBox-Android](https://github.com/TomRoush/PdfBox-Android) for robust PDF manipulation.
-  - [AndroidPdfViewer](https://github.com/mhviewsoft/AndroidPdfViewer) for high-speed document rendering.
+  - [PDFBox-Android](https://github.com/TomRoush/PdfBox-Android) for robust core PDF manipulation.
+  - [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) for high-speed document rendering.
 - **Database:** Room Persistence Library for local history management.
-- **Image Loading:** Glide for efficient asset handling.
+- **Concurrency:** Kotlin Coroutines for non-blocking background operations.
 - **Architecture:** MVVM (Model-View-ViewModel) for clean separation of concerns.
 
 ---
