@@ -138,6 +138,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void handleFilePicked(Uri uri) {
+        // Take persistable URI permission to access the file later from recents
+        try {
+            getContext().getContentResolver().takePersistableUriPermission(uri,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
+
         String fileName = "Unknown PDF";
         long fileSize = 0;
 
@@ -184,12 +192,11 @@ public class HomeFragment extends Fragment {
     }
 
     private void navigateToViewer(Uri uri) {
-        // Pass URI to viewer fragment
-        // Bundle bundle = new Bundle();
-        // bundle.putString("uri", uri.toString());
-        // Navigation.findNavController(binding.getRoot()).navigate(R.id.navigation_viewer, bundle);
-        Snackbar.make(binding.getRoot(), "Opening " + uri.getLastPathSegment(), Snackbar.LENGTH_SHORT).show();
+        Bundle bundle = new Bundle();
+        bundle.putString("uri", uri.toString());
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_home_to_viewer, bundle);
     }
+
 
     private void shareFile(RecentFile file) {
         Intent intent = new Intent(Intent.ACTION_SEND);

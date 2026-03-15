@@ -29,6 +29,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(24))
+        }
+    }
+
+
+
     
     // Kotlin is built-in in AGP 9.1.0
     // We can still use kotlinOptions for JVM target
