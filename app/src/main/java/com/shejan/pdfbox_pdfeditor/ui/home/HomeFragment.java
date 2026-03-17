@@ -132,6 +132,7 @@ public class HomeFragment extends Fragment {
         binding.btnPdfTools.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_home_to_tools));
 
         binding.btnRecentSeeAll.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.navigation_recent));
+        binding.tvRecentFilesHeader.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.navigation_recent));
         
         binding.btnSearch.setOnClickListener(v -> {
             boolean isVisible = binding.cardSearch.getVisibility() == View.VISIBLE;
