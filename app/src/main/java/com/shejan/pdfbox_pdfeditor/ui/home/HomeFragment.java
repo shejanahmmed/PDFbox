@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -129,10 +130,28 @@ public class HomeFragment extends Fragment {
 
     private void setupClickListeners() {
         binding.btnOpenPdf.setOnClickListener(v -> openFilePicker());
-        binding.btnPdfTools.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_home_to_tools));
+        
+        binding.btnPdfTools.setOnClickListener(v -> {
+            BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottom_nav);
+            if (bottomNav != null) {
+                bottomNav.setSelectedItemId(R.id.navigation_tools);
+            }
+        });
 
-        binding.btnRecentSeeAll.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.navigation_recent));
-        binding.tvRecentFilesHeader.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.navigation_recent));
+        binding.btnRecentSeeAll.setOnClickListener(v -> {
+            BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottom_nav);
+            if (bottomNav != null) {
+                bottomNav.setSelectedItemId(R.id.navigation_recent);
+            }
+        });
+
+        binding.tvRecentFilesHeader.setOnClickListener(v -> {
+            BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottom_nav);
+            if (bottomNav != null) {
+                bottomNav.setSelectedItemId(R.id.navigation_recent);
+            }
+        });
+
         
         binding.btnSearch.setOnClickListener(v -> {
             boolean isVisible = binding.cardSearch.getVisibility() == View.VISIBLE;
